@@ -1,0 +1,8 @@
+<btn ng-hide="editing_w" ng-click="editing_w = true" class="btn btn-md btn-blue-inverse"><span>{{hop.hopWeight}}</span> g
+</btn>
+<div class="input-group">
+    <input type="number" min="0" step="0.1" name="weight" id="weight" class="form-control"
+           aria-describedby="sizing-addon55" ng-required ng-blur="editing_w = false"
+           ng-show="editing_w" ng-model="hop.hopWeight" focus-on-show  ng-change="calculateIbu();"/>
+    <span class="input-group-addon" id="sizing-addon55" ng-show="editing_w"> g</span>
+</div>

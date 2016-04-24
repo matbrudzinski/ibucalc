@@ -1,0 +1,4 @@
+<btn ng-hide="editing_n" ng-click="editing_n = true;" class="btn btn-md btn-sand-inverse hop-name-btn">
+    <span>{{hop.hopName}}</span></btn>
+<input type="text" name="name" id="name" class="form-control" ng-show="editing_n"
+       ng-blur="editing_n = false" ng-model="hop.hopName" focus-on-show/>

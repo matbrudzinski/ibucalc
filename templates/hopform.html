@@ -1,0 +1,58 @@
+<td class="hop-action">
+    <div class="hopfor bitterness bg-white pull-left"></div>
+</td>
+<td class="col-xs-2">
+    <div class="input-group">
+        <input type="number" min="0" max="75" class="form-control " required
+               ng-model="boilTimeInput" aria-describedby="boilTimeInput-addon"/>
+        <span class="input-group-addon " id="boilTimeInput-addon"> m.</span>
+    </div>
+</td>
+<td class="col-xs-3">
+    <md-autocomplete
+            ng-disabled="ctrl.isDisabled"
+            md-no-cache="ctrl.noCache"
+            md-selected-item="ctrl.selectedItem"
+            md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+            md-search-text="ctrl.searchText"
+            md-selected-item-change="ctrl.selectedItemChange(item)"
+            md-items="item in ctrl.querySearch(ctrl.searchText)"
+            md-item-text="item.name"
+            md-min-length="0"
+            placeholder="Start typing hop name"
+            md-menu-class="autocomplete-custom-template">
+        <md-item-template>
+            <span class="item-title">
+                <md-icon md-svg-icon="img/hop.svg"></md-icon>
+                <span> {{item.name}} </span> <span class="pull-right alpha-acids">{{item.aa}} %</span>
+
+            </span>
+            <span class="hop-type">{{item.type}} ({{item.country}})</span>
+        </md-item-template>
+    </md-autocomplete>
+</td>
+<td class="col-xs-2">
+    <select class="form-control" ng-model="hopTypeSelect" required>
+        <option value="Pellet" ng-selected="true">Pellet</option>
+        <option value="Whole">Whole</option>
+    </select>
+</td>
+<td class="col-xs-2">
+    <div class="input-group">
+        <input type="number" min="0" max="100" step="0.1" class="form-control"
+               aria-describedby="hopAcidsInput-addon" required ng-model="hopAcidsInput"/>
+        <span class="input-group-addon" id="hopAcidsInput-addon"> %</span>
+    </div>
+</td>
+<td class="col-xs-2">
+    <div class="input-group">
+        <input type="number" min="0" step="0.1" class="form-control"
+               aria-describedby="hopWeightInput-addon" required ng-model="hopWeightInput"/>
+        <span class="input-group-addon" id="hopWeightInput-addon"> g</span>
+    </div>
+</td>
+<td class="col-xs-1">
+    <button type="submit" class="btn-add btn-light-green-inverse btn-circle btn">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+</td>

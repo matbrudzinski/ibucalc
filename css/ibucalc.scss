@@ -1,0 +1,127 @@
+@import 'colors';
+
+#calc-header {
+  .icon-hop {
+    margin-right: 15px;
+    color: $light-green;
+    font-size: 24px;
+  }
+}
+#ibu-summary {
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  color: #fff;
+  font-weight: 600;
+  .ibu{
+    h4 {
+      font-weight: 600 !important;
+    }
+    span {
+      font-size: 34px;
+    }
+  }
+  .boil-gravity {
+
+    h6 {
+      font-size: 9px;
+      font-weight: 600;
+    }
+  }
+}
+
+#calc {
+  background: #fff;
+  table {
+    tr {
+      &.add-tr td {
+        border-bottom: 1px solid #eeeeee;
+      }
+      th {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 12px;
+        .hopfor {
+          height: 25px;
+        }
+      }
+      td {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        line-height: 30px !important;
+        &.hop-action {
+          padding: 0 !important;
+          padding-right: 5px !important;
+        }
+        .input-group-addon {
+          @media all and (max-width: 991px) {
+            display: none;
+          }
+        }
+        .input-group {
+          @media all and (max-width: 991px) {
+            width: 100%;
+          }
+        }
+        input {
+          @media all and (max-width: 991px) {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        }
+        select {
+          @media all and (max-width: 767px) {
+            min-width: 61px;
+          }
+        }
+        .btn-remove, .btn-add {
+          -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+          -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.4);
+        }
+        .hop-name-btn {
+          height: 34px;
+        }
+        .hopfor {
+          display: block;
+          width: 15px;
+          height: 60px;
+          text-transform: uppercase;
+          font-size: 9px;
+          text-align: center;
+          line-height: 15px;
+          color: #fff;
+        }
+      }
+    }
+  }
+  #sizes {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    .btn {
+      @media all and (max-width: 767px) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .btn:not(.btn-circle) {
+    width: 100% !important;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+}
+
+.btn-expanding.reset {
+  margin-right: 0px;
+  span:first-of-type {
+    i {
+      margin-top: -1px;
+      margin-left: 0px;
+    }
+  }
+  &:hover {
+    span:last-of-type {
+      width: 175px;
+    }
+  }
+}

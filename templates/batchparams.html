@@ -1,0 +1,40 @@
+<div class="row" id="sizes">
+    <div class="col-sm-4">
+        <btn ng-hide="editing_bl" ng-click="editing_bl = true"
+             class="btn btn-md btn-green-inverse ">
+            Boil Size: <span>{{boilSizeInput}}</span> l
+        </btn>
+        <div class="input-group">
+            <input type="number" step="0.1" min="0" max="1000" ng-model="boilSizeInput"
+                   class="form-control "
+                   aria-describedby="sizing-addon1a" required ng-blur="editing_bl = false"
+                   ng-show="editing_bl" focus-on-show ng-change="calculateIbu();"/>
+            <span class="input-group-addon " id="sizing-addon1a" ng-show="editing_bl"> l.</span>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <btn ng-hide="editing_bh" ng-click="editing_bh = true"
+             class="btn btn-md btn-blue-inverse ">
+            Batch Size: <span>{{batchSizeInput}}</span> l
+        </btn>
+        <div class="input-group">
+            <input type="number" step="0.1" min="0" max="1000" ng-model="batchSizeInput"
+                   class="form-control "
+                   aria-describedby="sizing-addon1b" required ng-blur="editing_bh = false"
+                   ng-show="editing_bh" focus-on-show ng-change="calculateIbu();"/>
+            <span class="input-group-addon " id="sizing-addon1b" ng-show="editing_bh"> l.</span>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <btn ng-hide="editing_tog" ng-click="editing_tog = true"
+             class="btn btn-md btn-sand-inverse ">
+            Target Gravity: <span>{{targetGravityInput}}</span>
+        </btn>
+        <input type="number" step="0.001" min="1" max="2" ng-model="targetGravityInput"
+               class="form-control "
+               aria-describedby="sizing-addon1c" required ng-blur="editing_tog = false"
+               ng-show="editing_tog" focus-on-show ng-change="calculateIbu();"/>
+    </div>
+</div>

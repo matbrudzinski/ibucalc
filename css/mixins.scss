@@ -1,0 +1,29 @@
+@mixin btn-color($color) {
+  background: transparent;
+  border-color: $color !important;
+  color: $color !important;
+  &:hover, &:focus {
+    @if $color == $beige {
+      color: #333 !important;
+    }
+    @else {
+      color: #fff !important;
+    }
+    background: $color !important;
+  }
+}
+
+@mixin btn-color-inverse($color) {
+  background: $color !important;
+  border-color: $color !important;
+  @if $color == $beige {
+    color: #333 !important;
+  }
+  @else {
+    color: #fff !important;
+  }
+  &:hover, &:focus {
+    color: $color !important;
+    background: transparent !important;
+  }
+}

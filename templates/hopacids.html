@@ -1,0 +1,9 @@
+<btn ng-hide="editing_a" ng-click="editing_a = true" class="btn btn-md btn-green-inverse"><span>{{hop.hopAcids}}</span>%
+</btn>
+<div class="input-group">
+    <input type="number" min="0" max="100" step="0.1" name="acids" id="acids"
+           class="form-control"
+           aria-describedby="sizing-addon4" ng-required ng-blur="editing_a = false"
+           ng-show="editing_a" ng-model="hop.hopAcids" focus-on-show ng-change="calculateIbu();"/>
+    <span class="input-group-addon" id="sizing-addon4" ng-show="editing_a"> %</span>
+</div>

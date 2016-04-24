@@ -1,0 +1,10 @@
+<btn ng-hide="editing_bt" ng-click="editing_bt = true"
+     class="btn btn-md btn-blue-inverse">
+    <span>{{hop.boilTime}}</span> min.
+</btn>
+<div class="input-group">
+    <input type="number" min="0" max="75" name="time" id="time" class="form-control"
+           aria-describedby="sizing-addon2" ng-required ng-blur="editing_bt = false"
+           ng-show="editing_bt" ng-model="hop.boilTime" focus-on-show ng-change="calculateIbu();"/>
+    <span class="input-group-addon" id="sizing-addon2" ng-show="editing_bt"> m.</span>
+</div>

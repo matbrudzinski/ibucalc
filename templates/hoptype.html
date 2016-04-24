@@ -1,0 +1,7 @@
+<btn ng-hide="editing_t" ng-click="editing_t = true" class="btn btn-md btn-green-inverse">
+    <span>{{hop.hopType}}</span></btn>
+<select name="type" id="type" class="form-control" ng-required ng-show="editing_t"
+        ng-blur="editing_t = false" ng-model="hop.hopType" focus-on-show ng-change="calculateIbu();">
+    <option selected value="Pellet">Pellet</option>
+    <option value="Whole">Whole</option>
+</select>

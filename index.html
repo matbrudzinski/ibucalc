@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ibuCalc">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>IBU Calculator</title>
+
+    <!-- Styles -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700&subset=latin,latin-ext' rel='stylesheet'
+          type='text/css'>
+    <link href="css/angular-material.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png"/>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-nav">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="active" href="#">IBU Calculator</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" ng-controller="calcCtrl as ctrl" ng-cloak>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <div class="col-xs-6" id="calc-header">
+                    <h2><i class="icon-beergeek icon-hop"></i>IBU Calculator</h2>
+
+                    <p>The calculator uses the Tinseth Method. All units are in metric system.</p>
+                </div>
+                <div class="col-md-3 col-xs-6 pull-right">
+                    <div class="bg-blue text-center text-uppercase" id="ibu-summary">
+                        <div class="ibu">
+                            <h4 class="text-uppercase">IBU</h4>
+                            <span>{{ibu}}</span>
+                        </div>
+                        <div class="boil-gravity">
+                            <h6 class="">Estimated boil gravity</h6>
+                            {{boilGravity}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-offset-1" id="calc">
+            <form ng-submit="hopAdd();">
+                <h4>Batch parameters</h4>
+                <batch-params></batch-params>
+                <h4>Hops parameters</h4>
+
+                <div class=" table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="hop-action">
+                                <div class="hopfor bitterness bg-white pull-left"></div>
+                            </th>
+                            <th>Boil Time* (min)</th>
+                            <th>Hop name</th>
+                            <th>Type*</th>
+                            <th>Alpha acids* (%)</th>
+                            <th>Weight* (g)</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="add-tr" hop-form>
+                        </tr>
+                        <tr ng-repeat="hop in hopList | orderBy: '-boilTime'">
+                            <td class="hop-action">
+                                <hop-purpose></hop-purpose>
+                            </td>
+                            <td class="col-xs-2">
+                                <boil-time></boil-time>
+                            </td>
+                            <td class="col-xs-3">
+                                <hop-name></hop-name>
+                            </td>
+                            <td class="col-xs-2">
+                                <hop-type></hop-type>
+                            </td>
+                            <td class="col-xs-2">
+                                <hop-acids></hop-acids>
+                            </td>
+                            <td class="col-xs-2">
+                                <hop-weight></hop-weight>
+                            </td>
+                            <td class="col-xs-1">
+                                <hop-remove></hop-remove>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+            <a class="btn-expanding reset pull-right" ng-click="reset();">
+                <span>
+                    <i class="glyphicon glyphicon-remove"></i>
+                </span>
+                <span><b>Reset form</b><i class="icon-beergeek icon-hop"></i></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<span id="scroll-top" class="hidden">
+    <a href="#top" class="well well-sm">
+        <i class="glyphicon glyphicon-chevron-up"></i>
+    </a>
+</span>
+<footer class="footer">
+    <div class="container text-right">
+        &copy; 2016 Mateusz Brudzinski
+    </div>
+</footer>
+<!-- JavaScript -->
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/vendor/angular-animate.min.js"></script>
+<script src="js/vendor/angular-aria.min.js"></script>
+<script src="js/vendor/angular-messages.min.js"></script>
+<script src="js/vendor/angular-material.js"></script>
+
+<!-- Angular -->
+<script src="js/app.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/controllers/calc-controller.js"></script>
+<script src="js/directives/focus-on-show.js"></script>
+<script src="js/directives/boil-time.js"></script>
+<script src="js/directives/hop-name.js"></script>
+<script src="js/directives/hop-type.js"></script>
+<script src="js/directives/hop-acids.js"></script>
+<script src="js/directives/hop-weight.js"></script>
+<script src="js/directives/hop-remove.js"></script>
+<script src="js/directives/batch-params.js"></script>
+<script src="js/directives/hop-purpose.js"></script>
+<script src="js/directives/hop-form.js"></script>
+
+</body>
+</html>
