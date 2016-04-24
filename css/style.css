@@ -465,7 +465,7 @@ footer {
     margin-top: 20px;
     margin-bottom: 40px; }
     @media all and (max-width: 767px) {
-      #calc #sizes .btn {
+      #calc #sizes .btn, #calc #sizes input {
         margin-bottom: 10px; } }
   #calc .btn:not(.btn-circle) {
     width: 100% !important;

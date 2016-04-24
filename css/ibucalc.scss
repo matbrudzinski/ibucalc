@@ -98,7 +98,7 @@
   #sizes {
     margin-top: 20px;
     margin-bottom: 40px;
-    .btn {
+    .btn, input {
       @media all and (max-width: 767px) {
         margin-bottom: 10px;
       }
