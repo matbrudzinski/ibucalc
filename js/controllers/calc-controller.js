@@ -166,21 +166,57 @@ angular.module('ibuCalc', ["ngMaterial"]).controller('calcCtrl', function ($scop
                 'country': 'USA'
             },
             {
-                'name': 'Cenntenial',
+                'name': 'Cenntenial 2015',
                 'type': 'Aromatic',
-                'aa': 10.8,
+                'aa': 8.9,
                 'country': 'USA'
             },
             {
                 'name': 'Chinook',
                 'type': 'Universal',
-                'aa': 12.8,
+                'aa': 12.7,
                 'country': 'USA'
             },
             {
-                'name': 'Marynka',
+                'name': 'Simcoe',
+                'type': 'Aromatic',
+                'aa': 13.2,
+                'country': 'USA'
+            },
+            {
+                'name': 'Lubelski',
+                'type': 'Aromatic',
+                'aa': 3.5,
+                'country': 'USA'
+            },
+            {
+                'name': 'Marynka 2015',
                 'type': 'Bittering',
-                'aa': 2.1,
+                'aa': 9.5,
+                'country': 'Poland'
+            },
+            {
+                'name': 'Puławski 2015',
+                'type': 'Bittering',
+                'aa': 7.8,
+                'country': 'Poland'
+            },
+            {
+                'name': 'Oktawia 2015',
+                'type': 'Universal',
+                'aa': 7.6,
+                'country': 'Poland'
+            },
+            {
+                'name': 'Sybilla 2015',
+                'type': 'Aromatic',
+                'aa': 6.5,
+                'country': 'Poland'
+            },
+            {
+                'name': 'Iunga 2015',
+                'type': 'Bittering',
+                'aa': 11.6,
                 'country': 'Poland'
             }
         ];
